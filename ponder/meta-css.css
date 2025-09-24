@@ -1,6 +1,7 @@
 body {
     background-color: #ddd;
     font-size: 20px;
+    /*background-image: url('images/logos.jpg');*/
 }
 
 #content {
@@ -45,4 +46,8 @@ hr {
     background-color: #035f9c;
     width: 80%;
     margin: 30px auto;
+}
+
+.blue {
+    background-color: lightblue;
 }
