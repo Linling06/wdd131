@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: end;
+    justify-items: end;
+}
+
+nav {
+    border-top: 2px solid #EFC69B;
+    border-bottom: 2px solid #EFC69B;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #AF1B3F;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+
+.details {
+    text-align: end;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+
+article {
+    padding: 0 25px;
+}
+
+article img {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+
+h1 {
+    text-align: center;
+    color: #473144;
+}
+
+h1,
+h2 {
+    font-family: Lora, Impact, serif;
+}
+
+h2 {
+    color: #AF1B3F;
+    white-space: nowrap;
+}
+
+#filter {
+    display: none;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 2px solid #EFC69B;
+}
+
+footer p {
+    text-align: center;
+}
+
+@media screen and (min-width: 680px) {
+    #blog-articles .book {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+    }
+
+    #filter {
+        display: block;
+        border: 2px solid #EFC69B;
+        margin: 0;
+    }
+
+    .details {
+        border-right: 2px solid #EFC69B;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    article {
+        padding-left: 180px;
+    }
+
+    article img {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+    }
+
+}
