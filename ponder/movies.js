@@ -45,7 +45,11 @@ let movieList = document.querySelector('#movie-list');
 
 movies.forEach(movie => {
 
-    let html = `<article class="movie">
+    const article = document.createElement('article');
+    article.className = 'movie';
+
+
+    let html = `
     <h2>${movie.title}</h2>
     <img src="${movie.imgSrc}"
     alt="${movie.imgAlt}">
@@ -54,9 +58,10 @@ movies.forEach(movie => {
     <p><strong>Genre:</strong> ${movie.genre}</p>
     <p><strong>Rating:</strong> <span aria-label="${movie.stars.length} out of 5 stars">${movie.stars}</span></p>
     <p id='desc'>${movie.description}</p>
-    </article>`;
+    `;
 
-    movieList.innerHTML += html;
+    article.innerHTML += html;
+    movieList.appendChild(article);
 
 });
 
