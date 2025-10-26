@@ -63,7 +63,7 @@ movies.forEach(movie => {
     article.innerHTML += html;
     movieList.appendChild(article);
 
-});
+    });
 
 
 
