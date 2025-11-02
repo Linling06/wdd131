@@ -98,4 +98,5 @@ form {
     grid-area: 4 / 3;
     font-size: 1.1em;
     border-radius: 5px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
