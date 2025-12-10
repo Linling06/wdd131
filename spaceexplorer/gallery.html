@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Linling Xie">
+    <title>SpaceExplorer | Planet Gallery</title>
+
+    <!-- Basic description -->
+    <meta name="description"
+        content="View a gallery of planets, the Sun, and the Moon. Click a thumbnail to see a larger image and a short astronomy fact." />
+
+    <!-- Open Graph (optional but nice) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SpaceExplorer | Planet Gallery" />
+    <meta property="og:description"
+        content="A visual gallery of planets and other celestial objects for astronomy beginners." />
+    <meta property="og:url" content="https://yourgithubusername.github.io/wdd131/spaceexplorer/gallery.html" />
+    <meta property="og:image"
+        content="https://yourgithubusername.github.io/wdd131/spaceexplorer/images/hero-space.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SpaceExplorer | Planet Gallery" />
+    <meta name="twitter:description" content="Explore nine images: seven planets, the Sun, and the Moon." />
+    <meta name="twitter:image"
+        content="https://yourgithubusername.github.io/wdd131/spaceexplorer/images/hero-space.jpg" />
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Raleway:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-area">
+                <img src="images/logo-dark.png" alt="SpaceExplorer logo" class="logo"
+                    data-logo-dark="images/logo-dark.png" data-logo-light="images/logo-light.png" />
+                <span class="site-title">SpaceExplorer</span>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="menu-btn" type="button" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+
+            <!-- Main navigation -->
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+            </nav>
+
+            <!-- Dark / light mode toggle -->
+            <button id="theme-btn" class="theme-btn" type="button">
+                Dark Mode
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Header text for gallery page -->
+        <section class="gallery-header">
+            <h1>Planet Gallery</h1>
+            <p>
+                Explore nine images from our corner of the universe: seven planets,
+                the Sun, and the Moon. Click a picture to see a larger view and read
+                a short fact.
+            </p>
+        </section>
+
+        <!-- JS will generate the 3×3 grid of thumbnails here -->
+        <section aria-label="Planet gallery">
+            <div id="gallery"></div>
+        </section>
+
+        <!-- Modal for large image + caption -->
+        <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+            <span id="close-btn" class="close" aria-label="Close image">&times;</span>
+            <img id="modal-img" class="modal-content" alt="" />
+            <p id="modal-caption"></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="year"></span> SpaceExplorer | Created by Linling Xie
+        </p>
+        <div class="footer-contact">
+            <a href="#" aria-label="Contact link 1">□</a>
+            <a href="#" aria-label="Contact link 2">□</a>
+            <a href="#" aria-label="Contact link 3">□</a>
+        </div>
+    </footer>
+
+    <!-- Same JS file as home page -->
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Linling Xie">
+    <title>SpaceExplorer | Explore the Night Sky</title>
+
+    <!-- Basic description for search engines -->
+    <meta name="description"
+        content="SpaceExplorer is a beginner-friendly astronomy site that explains planets, stars, and galaxies with simple text and beautiful images." />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SpaceExplorer | Explore the Night Sky" />
+    <meta property="og:description"
+        content="Learn basic astronomy with clear explanations and a visual gallery of planets and celestial objects." />
+    <!-- TODO: replace with your real GitHub Pages URL after you publish -->
+    <meta property="og:url" content="https://yourgithubusername.github.io/wdd131/spaceexplorer/index.html" />
+    <!-- TODO: replace with the real URL to your preview/hero image -->
+    <meta property="og:image"
+        content="https://yourgithubusername.github.io/wdd131/spaceexplorer/images/hero-space.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SpaceExplorer | Explore the Night Sky" />
+    <meta name="twitter:description"
+        content="Discover the planets and night sky with this simple astronomy site for beginners." />
+    <meta name="twitter:image"
+        content="https://yourgithubusername.github.io/wdd131/spaceexplorer/images/hero-space.jpg" />
+
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Google Fonts: Orbitron (headings) and Raleway (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Raleway:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-area">
+                <img src="images/logo-dark.png" alt="SpaceExplorer logo" class="logo"
+                    data-logo-dark="images/logo-dark.png" data-logo-light="images/logo-light.png" />
+                <span class="site-title">SpaceExplorer</span>
+            </div>
+
+            <!-- Mobile menu button (visible on small screens) -->
+            <button id="menu-btn" class="menu-btn" type="button" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+
+            <!-- Main navigation -->
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+            </nav>
+
+            <!-- Dark / light mode toggle -->
+            <button id="theme-btn" class="theme-btn" type="button">
+                Dark Mode
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO: background image section -->
+        <section class="hero">
+            <div class="hero-overlay">
+                <h1>Explore the Night Sky</h1>
+                <p>
+                    SpaceExplorer gives you a simple, beginner-friendly way to learn
+                    about planets, stars, and galaxies. You do not need any science
+                    background to start your journey.
+                </p>
+                <a href="gallery.html" class="hero-button">View Planet Gallery</a>
+            </div>
+        </section>
+
+        <!-- Content section 1: What is astronomy? (keep) -->
+        <section class="content-section">
+            <h2>What Is Astronomy?</h2>
+            <p>
+                Astronomy is the study of everything beyond the Earth’s atmosphere,
+                including planets, moons, stars, nebulae, and galaxies. It helps us
+                understand where we are in the universe and how it works.
+            </p>
+            <p>
+                On SpaceExplorer, you will find short explanations, simple diagrams,
+                and clear language meant for curious beginners.
+            </p>
+        </section>
+
+        <!-- Content section 2: Black holes, image on the left -->
+        <section class="content-section content-with-image image-left">
+            <div class="content-image">
+                <!-- 换成你自己的黑洞图片文件名 -->
+                <img src="images/black-hole.jpg" alt="Illustration of a black hole bending light" />
+            </div>
+            <div class="content-text">
+                <h2>Black Holes: Gravity’s Giants</h2>
+                <p>
+                    Black holes are regions of space where gravity is so strong that
+                    nothing, not even light, can escape. They form when very massive
+                    stars collapse at the end of their lives.
+                </p>
+                <p>
+                    Astronomers cannot see black holes directly, but they observe how
+                    nearby stars and gas move and how light is bent around them. Studying
+                    black holes helps scientists test ideas about gravity, time, and the
+                    limits of our universe.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content section 3: Galaxies, image on the right -->
+        <section class="content-section content-with-image image-right">
+            <div class="content-image">
+                <!-- 换成你自己的银河系或星系图片文件名 -->
+                <img src="images/galaxy.jpg" alt="A spiral galaxy with bright stars and dust lanes" />
+            </div>
+            <div class="content-text">
+                <h2>Galaxies: Island Universes</h2>
+                <p>
+                    A galaxy is a huge collection of stars, gas, dust, and dark matter
+                    all held together by gravity. Our home, the Milky Way, is just one of
+                    billions of galaxies in the observable universe.
+                </p>
+                <p>
+                    Some galaxies are graceful spirals, others look like fuzzy balls or
+                    strange, distorted shapes. By exploring galaxies, we learn how stars
+                    are born and die and how the universe has changed over billions of
+                    years.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="year"></span> SpaceExplorer | Created by Linling Xie
+        </p>
+        <div class="footer-contact">
+            <a href="#" aria-label="Contact link 1">□</a>
+            <a href="#" aria-label="Contact link 2">□</a>
+            <a href="#" aria-label="Contact link 3">□</a>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript (dark mode, mobile menu, gallery, etc.) -->
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
