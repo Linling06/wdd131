@@ -1,7 +1,3 @@
-/* ================================
-   Base (mobile-first) styles
-================================ */
-
 *,
 *::before,
 *::after {
@@ -14,16 +10,13 @@ html {
 
 body {
     margin: 0;
-    font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont,
-        sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #2d353e;
-    /* primary */
     color: #fffef0;
-    /* accent 1 */
     line-height: 1.6;
 }
 
-/* light mode: JS will toggle this on <body> */
+/* light mode*/
 body.light-mode {
     background-color: #fffef0;
     color: #2d353e;
@@ -33,7 +26,7 @@ h1,
 h2,
 h3,
 .site-title {
-    font-family: "Orbitron", system-ui, sans-serif;
+    font-family: system-ui, sans-serif;
 }
 
 p {
@@ -42,7 +35,6 @@ p {
 
 a {
     color: #f4d27a;
-    /* accent 2 */
     text-decoration: none;
 }
 
@@ -55,9 +47,9 @@ main {
     padding-bottom: 3rem;
 }
 
-/* ================================
+/* 
    Header / Navigation (mobile)
-================================ */
+ */
 
 .site-header {
     background-color: #2d353e;
@@ -98,7 +90,7 @@ body.light-mode .site-header {
     letter-spacing: 0.08em;
 }
 
-/* Mobile menu button: visible by default */
+/* Mobile menu button */
 .menu-btn {
     display: block;
     background: none;
@@ -110,7 +102,7 @@ body.light-mode .site-header {
     cursor: pointer;
 }
 
-/* Nav: hidden until JS adds .open */
+/* Nav */
 .main-nav {
     position: absolute;
     top: 100%;
@@ -144,7 +136,6 @@ body.light-mode .main-nav {
 .nav-link:hover,
 .nav-link:focus {
     background-color: #3b3e91;
-    /* secondary */
     color: #fffef0;
     text-decoration: none;
 }
@@ -165,10 +156,9 @@ body.light-mode .main-nav {
     background-color: rgba(244, 210, 122, 0.16);
 }
 
-/* ================================
-   HERO (background image, mobile-first)
-================================ */
-
+/* 
+   HERO 
+*/
 
 .hero {
     max-width: 1100px;
@@ -181,18 +171,13 @@ body.light-mode .main-nav {
     background-repeat: no-repeat;
     color: #fffef0;
     position: relative;
-
-    /* NEW: center the text block */
     display: flex;
     align-items: center;
-    /* vertical center */
     justify-content: center;
-    /* horizontal center */
     text-align: center;
-    /* center the text itself */
 }
 
-/* dark overlay for better contrast */
+
 .hero::before {
     content: "";
     position: absolute;
@@ -234,9 +219,9 @@ body.light-mode .main-nav {
     text-decoration: none;
 }
 
-/* ================================
+/* 
    Content sections – mobile
-================================ */
+*/
 
 .content-section {
     max-width: 1100px;
@@ -253,9 +238,9 @@ body.light-mode .main-nav {
     margin: 0 0 1rem;
 }
 
-/* ================================
+/* 
    Gallery layout – mobile (used on gallery.html)
-================================ */
+*/
 
 .gallery-header {
     max-width: 1100px;
@@ -267,7 +252,7 @@ body.light-mode .main-nav {
     margin-bottom: 0.5rem;
 }
 
-/* gallery grid: mobile = 1 column */
+/* gallery grid */
 #gallery {
     max-width: 1100px;
     margin: 0 auto 3rem;
@@ -277,7 +262,7 @@ body.light-mode .main-nav {
     grid-template-columns: 1fr;
 }
 
-/* thumbnails: square-ish */
+/* thumbnails */
 #gallery img {
     width: 100%;
     height: 200px;
@@ -294,9 +279,9 @@ body.light-mode .main-nav {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* ================================
+/* 
    Modal (for gallery)
-================================ */
+*/
 
 .modal {
     position: fixed;
@@ -337,9 +322,7 @@ body.light-mode .main-nav {
     cursor: pointer;
 }
 
-/* ================================
-   Footer – mobile
-================================ */
+/* Footer – mobile */
 
 .site-footer {
     border-top: 1px solid rgba(255, 254, 240, 0.2);
@@ -372,24 +355,22 @@ body.light-mode .site-footer {
     font-size: 0.75rem;
 }
 
-/* ================================
-   Responsive breakpoints
-================================ */
+/* Responsive breakpoints */
 
-/* ≥ 520px: gallery 2 columns */
+/* ≥ 520px*/
 @media (min-width: 520px) {
     #gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* ≥ 900px: desktop hero + gallery 3 columns + desktop nav */
+/* ≥ 900px*/
 @media (min-width: 900px) {
     .header-inner {
         padding-inline: 1.5rem;
     }
 
-    /* desktop nav: always visible, horizontal */
+    /* desktop nav */
     .menu-btn {
         display: none;
     }
@@ -422,12 +403,10 @@ body.light-mode .site-footer {
     }
 }
 
-
 /* Content sections with side image (home page) */
 .content-with-image {
     display: flex;
     flex-direction: column;
-    /* mobile: stack image + text */
     gap: 1rem;
 }
 
@@ -435,8 +414,6 @@ body.light-mode .site-footer {
     width: 100%;
     border-radius: 0.9rem;
     overflow: hidden;
-
-    /* reserve space, so layout does not jump */
     aspect-ratio: 4 / 3;
 }
 
@@ -446,15 +423,13 @@ body.light-mode .site-footer {
     object-fit: cover;
 }
 
-
-/* Desktop: text and image side by side */
+/* Desktop*/
 @media (min-width: 900px) {
     .content-with-image {
         flex-direction: row;
         align-items: center;
     }
 
-    /* section where we want image on the right */
     .content-with-image.image-right {
         flex-direction: row-reverse;
     }

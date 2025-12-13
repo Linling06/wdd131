@@ -3,50 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Linling Xie">
+
     <title>SpaceExplorer | Planet Gallery</title>
 
-    <!-- Basic description -->
     <meta name="description"
-        content="View a gallery of planets, the Sun, and the Moon. Click a thumbnail to see a larger image and a short astronomy fact." />
+        content="View a gallery of planets, the Sun, and the Moon. Click a thumbnail to see a larger image and a short astronomy fact.">
 
-    <!-- Open Graph (optional but nice) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="SpaceExplorer | Planet Gallery" />
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SpaceExplorer | Planet Gallery">
     <meta property="og:description"
-        content="A visual gallery of planets and other celestial objects for astronomy beginners." />
-    <meta property="og:url" content="https://yourgithubusername.github.io/wdd131/spaceexplorer/gallery.html" />
-    <meta property="og:image"
-        content="https://yourgithubusername.github.io/wdd131/spaceexplorer/images/hero-space.jpg" />
+        content="A visual gallery of planets and other celestial objects for astronomy beginners.">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SpaceExplorer | Planet Gallery" />
-    <meta name="twitter:description" content="Explore nine images: seven planets, the Sun, and the Moon." />
-    <meta name="twitter:image"
-        content="https://yourgithubusername.github.io/wdd131/spaceexplorer/images/hero-space.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpaceExplorer | Planet Gallery">
+    <meta name="twitter:description" content="Explore nine images: seven planets, the Sun, and the Moon.">
+    <meta name="twitter:image" content="https://linling06.github.io/wdd131/spaceexplorer/images/hero-space.jpg">
 
-    <!-- Icons -->
-    <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Raleway:wght@400;600&display=swap"
-        rel="stylesheet">
-
-    <!-- Shared stylesheet -->
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-area">
-                <img src="images/logo-dark.png" alt="SpaceExplorer logo" class="logo"
-                    data-logo-dark="images/logo-dark.png" data-logo-light="images/logo-light.png" />
+                <img src="images/logo-dark.png" alt="SpaceExplorer logo" class="logo">
                 <span class="site-title">SpaceExplorer</span>
             </div>
 
@@ -61,7 +45,7 @@
                 <a href="gallery.html" class="nav-link active">Gallery</a>
             </nav>
 
-            <!-- Dark / light mode toggle -->
+            <!-- Dark / light mode -->
             <button id="theme-btn" class="theme-btn" type="button">
                 Dark Mode
             </button>
@@ -69,7 +53,6 @@
     </header>
 
     <main>
-        <!-- Header text for gallery page -->
         <section class="gallery-header">
             <h1>Planet Gallery</h1>
             <p>
@@ -79,19 +62,13 @@
             </p>
         </section>
 
-        <!-- JS will generate the 3×3 grid of thumbnails here -->
         <section aria-label="Planet gallery">
             <div id="gallery"></div>
         </section>
 
-        <!-- Modal for large image + caption -->
         <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
-            <!-- ✅ 修复 1：给 span 加 role="button"，这样 aria-label 就合法了 -->
             <span id="close-btn" class="close" role="button" aria-label="Close image">&times;</span>
-
-            <!-- ✅ 修复 2：给 img 一个默认 src 和 alt，validator 才不会报错 -->
-            <img id="modal-img" class="modal-content" src="images/hero-space.jpg" alt="Large astronomy image"
-                loading="lazy" />
+            <img id="modal-img" class="modal-content" src="images/hero-space.jpg" alt="Large astronomy image">
             <p id="modal-caption"></p>
         </div>
     </main>
@@ -107,7 +84,6 @@
         </div>
     </footer>
 
-    <!-- Same JS file as home page -->
     <script src="scripts/main.js"></script>
 </body>
 

@@ -1,5 +1,6 @@
 // =============================
 // Data: 9 celestial objects
+// (Objects + Array)
 // =============================
 const planets = [
     {
@@ -53,72 +54,67 @@ const planets = [
 // Footer year
 // =============================
 function setCurrentYear() {
-    const yearSpan = document.querySelector("#year");
+    const yearSpan = document.getElementById("year");
     if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
     }
 }
 
 // =============================
 // Dark / Light mode
 // =============================
-function toggleTheme() {
-    const body = document.body;
-    const themeBtn = document.querySelector("#theme-btn");
-    const logo = document.querySelector(".logo");
-
-    body.classList.toggle("light-mode");
-
-    // Change button text
-    if (body.classList.contains("light-mode")) {
-        themeBtn.textContent = "Dark Mode";
-        // switch to light logo
-        if (logo) {
-            logo.src = logo.dataset.logoLight;
-        }
-    } else {
-        themeBtn.textContent = "Light Mode";
-        // switch to dark logo
-        if (logo) {
-            logo.src = logo.dataset.logoDark;
-        }
-    }
-}
-
 function setupThemeToggle() {
     const themeBtn = document.querySelector("#theme-btn");
-    if (!themeBtn) return;
+    const logo = document.querySelector(".logo");
+    const body = document.body;
 
-    // Default text on first load
-    themeBtn.textContent = "Light Mode";
+    if (themeBtn && logo) {
+        // start in dark mode
+        themeBtn.textContent = "Light Mode";
+        logo.src = "images/logo-dark.png";
 
-    themeBtn.addEventListener("click", toggleTheme);
+        themeBtn.addEventListener("click", function () {
+            // conditional branching
+            if (body.classList.contains("light-mode")) {
+                // switch back to dark mode
+                body.classList.remove("light-mode");
+                themeBtn.textContent = "Light Mode";
+                logo.src = "images/logo-dark.png";
+            } else {
+                // switch to light mode
+                body.classList.add("light-mode");
+                themeBtn.textContent = "Dark Mode";
+                logo.src = "images/logo-light.png";
+            }
+        });
+    }
 }
 
 // =============================
 // Mobile menu
 // =============================
-function toggleMenu() {
-    const nav = document.querySelector("#main-nav");
-    if (!nav) return;
-
-    nav.classList.toggle("open");
-}
-
 function setupMenuToggle() {
     const menuBtn = document.querySelector("#menu-btn");
     const nav = document.querySelector("#main-nav");
 
-    if (!menuBtn || !nav) return;
+    if (menuBtn && nav) {
+        // open / close menu when clicking button
+        menuBtn.addEventListener("click", function () {
+            if (nav.classList.contains("open")) {
+                nav.classList.remove("open");
+            } else {
+                nav.classList.add("open");
+            }
+        });
 
-    menuBtn.addEventListener("click", toggleMenu);
-
-    // Optional: close menu if user clicks a nav link (mobile)
-    nav.addEventListener("click", function (event) {
-        if (event.target.classList.contains("nav-link")) {
-            nav.classList.remove("open");
-        }
-    });
+        // close menu when a nav link is clicked (on mobile)
+        nav.addEventListener("click", function (event) {
+            if (event.target.classList.contains("nav-link")) {
+                nav.classList.remove("open");
+            }
+        });
+    }
 }
 
 // =============================
@@ -126,24 +122,25 @@ function setupMenuToggle() {
 // =============================
 function buildGallery() {
     const gallery = document.querySelector("#gallery");
-    if (!gallery) return;
 
-    // Clear in case this runs twice
-    gallery.innerHTML = "";
+    if (gallery) {
+        // clear first (in case)
+        gallery.innerHTML = "";
 
-    // Array method: forEach
-    planets.forEach(function (planet) {
-        const img = document.createElement("img");
-        img.src = planet.image;
-        img.alt = planet.name;
-        img.setAttribute("data-name", planet.name); // helpful for debugging
+        // Array method: forEach
+        planets.forEach(function (planet) {
+            const img = document.createElement("img");
+            img.src = planet.image;
+            img.alt = planet.name;
 
-        img.addEventListener("click", function () {
-            openModal(planet);
+            // when we click a thumbnail, open the modal
+            img.addEventListener("click", function () {
+                openModal(planet);
+            });
+
+            gallery.appendChild(img);
         });
-
-        gallery.appendChild(img);
-    });
+    }
 }
 
 // =============================
@@ -154,56 +151,56 @@ function openModal(planet) {
     const modalImg = document.querySelector("#modal-img");
     const caption = document.querySelector("#modal-caption");
 
-    if (!modal || !modalImg || !caption) return;
-
-    modalImg.src = planet.image;
-    modalImg.alt = planet.name;
-    caption.textContent = planet.name + " – " + planet.description;
-
-    modal.classList.remove("hidden");
+    if (modal && modalImg && caption) {
+        modalImg.src = planet.image;
+        modalImg.alt = planet.name;
+        caption.textContent = planet.name + " – " + planet.description;
+        modal.classList.remove("hidden");
+    }
 }
 
 function closeModal() {
     const modal = document.querySelector("#modal");
-    if (!modal) return;
-    modal.classList.add("hidden");
+    if (modal) {
+        modal.classList.add("hidden");
+    }
 }
 
 function setupModalEvents() {
     const modal = document.querySelector("#modal");
     const closeBtn = document.querySelector("#close-btn");
 
-    if (!modal || !closeBtn) return;
-
-    // Close when clicking X
-    closeBtn.addEventListener("click", closeModal);
-
-    // Close when clicking outside the image
-    modal.addEventListener("click", function (event) {
-        // Conditional: only close if they clicked the dark background,
-        // not the image or caption.
-        if (event.target === modal) {
+    if (modal && closeBtn) {
+        // 1. Click the X button
+        closeBtn.addEventListener("click", function () {
             closeModal();
-        }
-    });
+        });
 
-    // Close with Esc key
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && !modal.classList.contains("hidden")) {
-            closeModal();
-        }
-    });
+        // 2. Click outside the image (on the dark background)
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 3. Press Esc key to close
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    }
 }
 
 // =============================
 // Init: run everything after DOM is ready
 // =============================
 function init() {
-    setCurrentYear();
-    setupThemeToggle();
-    setupMenuToggle();
-    buildGallery();
-    setupModalEvents();
+    setCurrentYear();      // function 1
+    setupThemeToggle();    // function 2
+    setupMenuToggle();     // function 3
+    buildGallery();        // function 4
+    setupModalEvents();    // function 5
 }
 
 document.addEventListener("DOMContentLoaded", init);
