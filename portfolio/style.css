@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    color: #111;
+    background: #f6f7fb;
+}
+
+.container {
+    width: min(980px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.header {
+    padding: 56px 0 28px;
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 36px;
+}
+
+.subtitle {
+    margin: 0 0 14px;
+    font-size: 16px;
+    color: #444;
+}
+
+.intro {
+    margin: 0 0 18px;
+    max-width: 62ch;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin: 14px 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.project {
+    padding: 14px;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #eee;
+}
+
+.project h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.meta {
+    margin: 0 0 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.tags span {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #eee;
+}
+
+.project-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+.list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.hint {
+    margin: 14px 0 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.footer {
+    padding: 24px 0 40px;
+    color: #555;
+    font-size: 14px;
+}
